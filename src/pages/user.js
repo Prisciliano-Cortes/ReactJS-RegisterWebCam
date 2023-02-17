@@ -2,11 +2,11 @@ import { useRef, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import { getUsers } from '../firebase/provider'
+import { Spinner } from '../components/spinner';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '../style/carousel.css';
-import { Spinner } from '../components/spinner';
 
 export const User = () => {
     const [user, setUser] = useState(null);

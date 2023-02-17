@@ -2,21 +2,11 @@ import { useState, useRef, useCallback } from 'react';
 import Swal from 'sweetalert2';
 import { Formik } from 'formik';
 import emailjs from '@emailjs/browser';
-// import Webcam from "react-webcam";
-//import { profileUpload } from '../helpers/upload';
+import { WebcamComponent } from './webcam';
 import { RegisterValidations } from '../validations/register';
 import { EditUrlImg, registerUser, uploadProfileStorage, validateRepeatData } from '../firebase/provider';
-import { WebcamComponent } from './webcam';
-
-// const WebcamComponent = () => <Webcam />;
 
 export const Register = () => {
-
-    // const videoConstraints = {
-    //     width: "50%",
-    //     height: "50%",
-    //     facingMode: "user"
-    // };
 
     const webcamRef = useRef(null);
 
@@ -38,39 +28,11 @@ export const Register = () => {
         setImgSrc(null);
     };
 
-    // // const [image,setImage] = useState('');
-    // // const webcamRef = useRef(null);
-    
-    // // const capture = useCallback( () => {
-    // //     const imageSrc = webcamRef.current.getScreenshot();
-    // //     setImage(imageSrc)
-    // // });
-
-
-    //const [urlFile, setUrlFile] = useState(null);
-    //const [file, setFile] = useState([]);
-    //const [statusImg, setStatusImg] = useState(false);
-
-    //const ref = useRef(null);
-
     const random = Math.random().toString(36).slice(2);
 
-    // console.log(file)
-
-    // const openProfile = () => {
-    //     ref.current.click();
-    // }
-
     const onSubmit = async ({name, email, password}, { setSubmitting, resetForm }) => {
-        //const img = file.length;
-        
         if (imgSrc) {
-            //setStatusImg(false);
-
             try {
-
-                //const pdf = await generateDiploma(name)
-
                 const newUser = {
                     name,
                     email,
@@ -102,8 +64,6 @@ export const Register = () => {
                             console.log(error.text);
                         });
                     }, 120000);
-                                    
-                    //setUrlFile(null);
                 
                     Swal.fire({
                         icon: 'success',
@@ -125,9 +85,6 @@ export const Register = () => {
                 setSubmitting(false);
             }
         } 
-        // else {
-        //     setStatusImg(true)
-        // }
     };
 
     const sendMessage = () => {
@@ -143,44 +100,6 @@ export const Register = () => {
 
     return (
         <div className='pt-4 pl-4 flex items-center justify-center'>
-            {/* <div className="webcam-img">
-                {
-                    image == '' ? 
-                    <Webcam
-                        audio={false}
-                        height={200}
-                        ref={webcamRef}
-                        screenshotFormat="image/jpeg"
-                        width={220}
-                        videoConstraints={videoConstraints}
-                    /> : 
-                    <img src={image} alt='Profile' />
-                }
-            </div>
-            <div>
-                {
-                    image != '' ?
-                    <button 
-                        onClick={(e) => {
-                            e.preventDefault();
-                            setImage('')
-                        }}
-                        className="webcam-btn"
-                    >
-                        Retake Image
-                    </button> :
-                    <button 
-                        onClick={(e) => {
-                            e.preventDefault();
-                            capture();
-                        }}
-                        className="webcam-btn"
-                    >
-                        Capture
-                    </button>
-                }
-            </div>
-             */}
             <div>
                 <WebcamComponent 
                     startCam={startCam} 

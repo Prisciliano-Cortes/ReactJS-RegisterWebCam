@@ -1,7 +1,4 @@
 import Webcam from "react-webcam";
-// import {storage} from "../firebase/config";
-// import { useCallback, useRef, useState } from "react";
-// import { ref, uploadString } from "firebase/storage";
 
 export const WebcamComponent = ({ startCam, imgSrc, setImgSrc, stopCamera, startCamera, onCapture, webcamRef }) =>  {
     const videoConstraints = {
@@ -11,53 +8,7 @@ export const WebcamComponent = ({ startCam, imgSrc, setImgSrc, stopCamera, start
 	    // facingMode: { exact: "environment" }
 	};
 
-	// // creating webcam reference
-    // const webcamRef = useRef(null);
-
-    // // imgSrc stores the image
-    // const [imgSrc, setImgSrc] = useState(null);
-
-    // // variable that controls if the camera is open or not
-    // const [startCam, setStartCam] = useState(false);
-
-    // const onCapture = useCallback(() => {
-    //     const imageSrc = webcamRef.current.getScreenshot();
-    //     setImgSrc(imageSrc);
-    // }, [webcamRef]);
-
-    // const startCamera = () => {
-    //     setStartCam(true);
-    // };
-
-    // const stopCamera = () => {
-    //     setStartCam(false);
-    //     setImgSrc(null);
-    // };
-
     const exampleImage = "https://cdn.mos.cms.futurecdn.net/HjeuGzfuzMgMkwbnvSZueM-1200-80.jpg.webp";
-
-    // const [counter, setCounter] = useState(0);
-
-    // console.log(imgSrc)
-
-    // const usePhoto = () => {
-    //     if (imgSrc) {
-    //         try {
-    //             const storageRef = ref(
-    //             storage,
-    //             "sanscam/"  + counter.toString()
-    //             );
-    //             uploadString(storageRef, imgSrc, "data_url").then((snapshot) => {
-    //             console.log("Uploaded a data_url string!");
-    //             });
-    //         } catch (e) {
-    //             console.log(e);
-    //         }
-
-    //         setImgSrc(null);
-    //         setCounter(counter + 1);
-    //     }
-    // }
 
     return (
         <div

@@ -1,27 +1,27 @@
 #app {
     height: 100%;
-  }
-  html,
-  body {
+}
+  
+html, body {
     position: relative;
     height: 100%;
-  }
+}
   
-  body {
+body {
     background: #eee;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
     color: #000;
     margin: 0;
     padding: 0;
-  }
+}
   
-  .swiper {
+.swiper {
     width: 100%;
     height: 100%;
-  }
+}
   
-  .swiper-slide {
+.swiper-slide {
     text-align: center;
     font-size: 18px;
     background: #fff;
@@ -30,16 +30,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
   
-  .swiper-slide img {
+.swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
+}
   
-  .autoplay-progress {
+.autoplay-progress {
     position: absolute;
     right: 16px;
     bottom: 16px;
@@ -51,9 +51,9 @@
     justify-content: center;
     font-weight: bold;
     color: var(--swiper-theme-color);
-  }
+}
   
-  .autoplay-progress svg {
+.autoplay-progress svg {
     --progress: 0;
     position: absolute;
     left: 0;
@@ -67,5 +67,5 @@
     stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
     stroke-dasharray: 125.6;
     transform: rotate(-90deg);
-  }
+}
   
